@@ -5,13 +5,23 @@ export default class Achievement extends Component {
         super(props)
 
         this.state = {
-            game: props.game
+            game: props.achievement.game,
+            image: props.achievement.image,
+            contentColor: props.contentColor,
+            twitchBackgroundColor: props.twitchBackgroundColor,
+            margin: props.margin
         }
     }
 
     render() {
         return (
-            <div className='achievement-wrapper'>
+            <div className='achievement' style={{
+                color: `${this.state.contentColor}`,
+                backgroundColor: `${this.state.twitchBackgroundColor}`,
+                marginTop: `${this.state.margin}`,
+                marginBottom: `${this.state.margin}`,
+                borderRadius: 3
+            }}>
                 <div className='achievement-game-details'>
                     <div className='achievement-game-image'>
                         <img alt={this.state.game + " Preview Image"} src={this.state.image}></img>

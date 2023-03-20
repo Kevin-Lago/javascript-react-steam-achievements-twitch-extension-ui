@@ -6,31 +6,23 @@ export default class Achievement extends Component {
         super(props)
 
         this.achievement = props.achievement;
-
-        this.state = {
-            game: props.achievement.game,
-            image: props.achievement.image,
-            contentColor: props.contentColor,
-            twitchBackgroundColor: props.twitchBackgroundColor,
-            margin: props.margin
-        }
     }
 
     render() {
         return (
-            <li className='achievement flex-start no-select'>
-                <i className='achievement-icon-wrapper'>
+            <div className='achievement flex-start no-select'>
+                <div className='achievement-icon-wrapper flex-center'>
                     <img className='achievement-icon' alt={this.achievement.displayName + " Preview Image"} src={this.achievement.icon}></img>
-                </i>
-                <i className='achievement-details'>
+                </div>
+                <div className='achievement-details flex-center-column'>
                     <div className='achievement-title'>
                         {this.achievement.displayName}
                     </div>
                     <div className='achievement-progress'>
                         1/1
                     </div>
-                </i>
-            </li>
+                </div>
+            </div>
         )
     }
 }

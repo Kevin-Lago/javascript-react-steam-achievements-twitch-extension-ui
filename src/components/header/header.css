@@ -1,0 +1,9 @@
+#header {
+    height: var(--element-height);
+}
+
+#header-title {
+    background-color: var(--color-background-body);
+    height: calc(100% - var(--element-spacing));
+    width: calc(100% - var(--element-spacing));
+}

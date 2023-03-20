@@ -1,5 +1,4 @@
-import React, { Component, createRef } from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from 'react';
 import Achievement from '../achievement/Achievement';
 import './game.css';
 
@@ -15,15 +14,16 @@ export default class Game extends Component {
     }
 
     focus(event) {
-        console.log(document.activeElement.id, this.game.appId);
         event.preventDefault();
+        console.log(document.activeElement.id, this.game.appId);
+        // event.preventDefault();
         const element = document.getElementById(this.game.appId);
         element.focus();
     }
 
     render() {
         return (
-            <div tabIndex={this.game.appId} id={this.game.appId} className='game'>
+            <div tabIndex={this.game.appId} id={this.game.appId} className='game no-select'>
                 <div onClick={(event) => this.focus(event)} className='game-details'>
                     <div className='game-image'>
                         <img alt={this.game.name + " Preview Image"} src={this.game.imageUrl}></img>

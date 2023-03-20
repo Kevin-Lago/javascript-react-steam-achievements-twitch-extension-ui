@@ -1,7 +1,15 @@
 .achievement {
-    height: 3em;
+    border-top: var(--border-width-default) solid var(--color-border-base);
+    height: var(--element-height);
+    margin: var(--element-spacing);
     width: 100%;
 }
+
+.achievement-details {
+    width: 100%;
+}
+
+.achievement-icon-wrapper {}
 
 .achievement-icon {
     height: 32px;

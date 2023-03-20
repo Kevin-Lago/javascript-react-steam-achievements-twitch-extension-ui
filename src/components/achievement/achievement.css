@@ -1,0 +1,10 @@
+.achievement {
+    height: 3em;
+    width: 100%;
+}
+
+.achievement-icon {
+    height: 32px;
+    width: 32px;
+    padding: 0.4em;
+}

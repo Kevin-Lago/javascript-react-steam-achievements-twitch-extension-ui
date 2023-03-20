@@ -17,10 +17,10 @@ export default class Header extends Component {
 
     render() {
         return (
-            <div id="header" style={{
-                backgroundColor: `${this.state.themeColor}`,
-                height: `${this.state.headerHeight}`,
-                color: `${this.state.contentColor}`
+            <div id="header" className="no-select" style={{
+                background: "linear-gradient(225deg, " + `${this.state.twitchBackgroundColor}, ` + `${this.state.twitchBackgroundColor} .3rem,` + `${this.state.themeColor} .3rem`,
+                // backgroundColor: `${this.state.themeColor}`,
+                height: `${this.state.headerHeight}`
             }}>
                 <div id="header-title-wrapper" style={{
                     display: "flex",

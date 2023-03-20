@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import './achievement.css';
 
 export default class Achievement extends Component {
     constructor(props) {
         super(props)
+
+        this.achievement = props.achievement;
 
         this.state = {
             game: props.achievement.game,
@@ -15,25 +18,19 @@ export default class Achievement extends Component {
 
     render() {
         return (
-            <div className='achievement' style={{
-                color: `${this.state.contentColor}`,
-                backgroundColor: `${this.state.twitchBackgroundColor}`,
-                marginTop: `${this.state.margin}`,
-                marginBottom: `${this.state.margin}`,
-                borderRadius: 3
-            }}>
-                <div className='achievement-game-details'>
-                    <div className='achievement-game-image'>
-                        <img alt={this.state.game + " Preview Image"} src={this.state.image}></img>
+            <li className='achievement flex-start no-select'>
+                <i className='achievement-icon-wrapper'>
+                    <img className='achievement-icon' alt={this.achievement.displayName + " Preview Image"} src={this.achievement.icon}></img>
+                </i>
+                <i className='achievement-details'>
+                    <div className='achievement-title'>
+                        {this.achievement.displayName}
                     </div>
-                    <div className='achievement-game-title'>
-                        {this.state.game}
+                    <div className='achievement-progress'>
+                        1/1
                     </div>
-                </div>
-                <div className='achievement-progress'>
-                    Test
-                </div>
-            </div>
+                </i>
+            </li>
         )
     }
 }

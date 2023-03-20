@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import Achievement from './components/achievement/Achievement';
 import Header from './components/header/Header';
 import Game from './components/game/Game';
 

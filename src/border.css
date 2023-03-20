@@ -1,0 +1,15 @@
+:root {
+    --border-width-default: 1px;
+    --border-width-input: 2px;
+    --border-width-input-overlay-unfocused: 1px;
+    --border-width-marked: 3px;
+    --border-width-spinner: 2px;
+    --border-width-tag: 2px;
+    --border-radius-none: 0;
+    --border-radius-small: 0.2rem;
+    --border-radius-medium: 0.4rem;
+    --border-radius-large: 0.6rem;
+    --border-radius-extra-large: 1rem;
+    --border-radius-extra-extra-large: 1.6rem;
+    --border-radius-rounded: 9000px;
+}

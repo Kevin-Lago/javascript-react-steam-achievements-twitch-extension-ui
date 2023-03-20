@@ -1,92 +1,7 @@
-.theme-dark,
-:root {
-  --color-background-body: var(--twitch-color-hinted-grey-1);
-  --color-background-base: var(--twitch-color-hinted-grey-2);
-  --color-text-link: var(--twitch-color-twitch-purple-11);
-  --color-text-base: var(--twitch-color-hinted-grey-14);
-}
-
-:root {
-  --border-width-default: 1px;
-  --element-height: 3em;
-  --element-spacing: .2em;
-  --color-border-base: var(--twitch-color-opac-gd-2);
-
-  --twitch-color-twitch-purple: #9147ff;
-  --twitch-color-twitch-purple-1: #040109;
-  --twitch-color-twitch-purple-2: #0d031c;
-  --twitch-color-twitch-purple-3: #15052e;
-  --twitch-color-twitch-purple-4: #24094e;
-  --twitch-color-twitch-purple-5: #330c6e;
-  --twitch-color-twitch-purple-6: #451093;
-  --twitch-color-twitch-purple-7: #5c16c5;
-  --twitch-color-twitch-purple-8: #772ce8;
-  --twitch-color-twitch-purple-9: #9147ff;
-  --twitch-color-twitch-purple-10: #a970ff;
-  --twitch-color-twitch-purple-11: #bf94ff;
-  --twitch-color-twitch-purple-12: #d1b3ff;
-  --twitch-color-twitch-purple-13: #e3d1ff;
-  --twitch-color-twitch-purple-14: #ede0ff;
-  --twitch-color-twitch-purple-15: #f3ebff;
-  --twitch-color-hinted-grey-1: #0e0e10;
-  --twitch-color-hinted-grey-2: #18181b;
-  --twitch-color-hinted-grey-3: #1f1f23;
-  --twitch-color-hinted-grey-4: #26262c;
-  --twitch-color-hinted-grey-5: #323239;
-  --twitch-color-hinted-grey-6: #3b3b44;
-  --twitch-color-hinted-grey-7: #53535f;
-  --twitch-color-hinted-grey-8: #848494;
-  --twitch-color-hinted-grey-9: #adadb8;
-  --twitch-color-hinted-grey-10: #c8c8d0;
-  --twitch-color-hinted-grey-11: #d3d3d9;
-  --twitch-color-hinted-grey-12: #dedee3;
-  --twitch-color-hinted-grey-13: #e6e6ea;
-  --twitch-color-hinted-grey-14: #efeff1;
-  --twitch-color-hinted-grey-15: #f7f7f8;
-  --twitch-color-transparent: transparent;
-  --twitch-color-opac-b-1: rgba(0, 0, 0, .05);
-  --twitch-color-opac-b-2: rgba(0, 0, 0, .08);
-  --twitch-color-opac-b-3: rgba(0, 0, 0, .13);
-  --twitch-color-opac-b-4: rgba(0, 0, 0, .16);
-  --twitch-color-opac-b-5: rgba(0, 0, 0, .22);
-  --twitch-color-opac-b-6: rgba(0, 0, 0, .28);
-  --twitch-color-opac-b-7: rgba(0, 0, 0, .4);
-  --twitch-color-opac-b-8: rgba(0, 0, 0, .5);
-  --twitch-color-opac-b-9: rgba(0, 0, 0, .6);
-  --twitch-color-opac-b-10: rgba(0, 0, 0, .7);
-  --twitch-color-opac-b-11: rgba(0, 0, 0, .75);
-  --twitch-color-opac-b-12: rgba(0, 0, 0, .8);
-  --twitch-color-opac-b-13: rgba(0, 0, 0, .85);
-  --twitch-color-opac-b-14: rgba(0, 0, 0, .9);
-  --twitch-color-opac-b-15: rgba(0, 0, 0, .95);
-  --twitch-color-opac-gd-1: rgba(83, 83, 95, .38);
-  --twitch-color-opac-gd-2: rgba(83, 83, 95, .48);
-  --twitch-color-opac-gd-3: rgba(83, 83, 95, .55);
-  --twitch-color-opac-gd-4: rgba(50, 50, 57, .62);
-  --twitch-color-opac-gd-5: rgba(50, 50, 57, .95);
-  --twitch-color-opac-gl-1: hsla(240, 7%, 70%, .22);
-  --twitch-color-opac-gl-2: hsla(240, 7%, 70%, .35);
-  --twitch-color-opac-gl-3: hsla(240, 7%, 70%, .43);
-  --twitch-color-opac-gl-4: hsla(240, 8%, 88%, .4);
-  --twitch-color-opac-gl-5: hsla(240, 8%, 88%, .95);
-}
-
 html {
-  overflow: hidden;
-}
-
-ul,
-li {
-  margin-block-start: 0;
-  margin-block-end: 0;
-  margin-inline-start: 0;
-  margin-inline-end: 0;
-  padding-inline-start: 0;
-}
-
-li {
-  margin-block-start: .2em;
-  margin-block-end: .2em;
+  line-height: 1.5;
+  text-size-adjust: 100%;
+  font-size: 62.5%;
 }
 
 #app {
@@ -94,18 +9,46 @@ li {
   color: white;
   overflow-y: hidden;
   height: 100vh;
+  --element-height: 5rem;
+  --element-spacing: var(--space-05);
 }
 
 #games {
-  height: calc(100% - 3em);
-  overflow-y: auto;
-  /* background-color: blue; */
+  height: calc(100% - var(--element-height));
+  /* margin-top: var(--element-spacing); */
+  overflow-y: scroll;
+  z-index: 5;
+}
+
+#games::-webkit-scrollbar,
+.game-achievement-list::-webkit-scrollbar {
+  width: 0.6rem;
+  opacity: 0.7;
+  transition: .3s;
+}
+
+#games::-webkit-scrollbar-track,
+.game-achievement-list::-webkit-scrollbar-track {
+  display: none;
+}
+
+#games::-webkit-scrollbar-thumb,
+.game-achievement-list::-webkit-scrollbar-thumb {
+  background: var(--color-border-base);
+  border-radius: var(--element-spacing);
 }
 
 .flex-start {
   display: flex;
   justify-content: start;
   align-items: center;
+}
+
+.flex-start-column {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
 }
 
 .flex-center {
@@ -135,30 +78,4 @@ li {
   user-select: none;
   /* Non-prefixed version, currently
   supported by Chrome, Edge, Opera and Firefox */
-}
-
-/* width */
-#games::-webkit-scrollbar,
-#achievements::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-#games::-webkit-scrollbar-track,
-#achievments::-webkit-scrollbar-track {
-  background: #0e0e10;
-}
-
-/* Handle */
-#games::-webkit-scrollbar-thumb,
-#achievements::-webkit-scrollbar-thumb {
-  background: #888;
-  transition: .3s;
-  cursor: pointer;
-}
-
-/* Handle on hover */
-#games::-webkit-scrollbar-thumb:hover,
-#achievements::-webkit-scrollbar-thumb:hover {
-  background: #555;
 }

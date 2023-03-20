@@ -23,12 +23,12 @@ export default class Game extends Component {
 
     render() {
         return (
-            <div tabIndex={this.game.appId} id={this.game.appId} className='game no-select'>
-                <div onClick={(event) => this.focus(event)} className='game-details'>
-                    <div className='game-image'>
-                        <img alt={this.game.name + " Preview Image"} src={this.game.imageUrl}></img>
+            <div tabIndex={this.game.appId} id={this.game.appId} className='game'>
+                <div onClick={(event) => this.focus(event)} className='game-details flex-start'>
+                    <div className='game-icon-wrapper flex-center'>
+                        <img className='game-icon' alt={this.game.name + " Preview Image"} src={this.game.imageUrl}></img>
                     </div>
-                    <div className='game-title'>
+                    <div className='game-title flex-start'>
                         {this.game.name}
                     </div>
                 </div>

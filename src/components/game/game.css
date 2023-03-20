@@ -1,33 +1,45 @@
 .game {
     display: block;
-    height: var(--element-height);
-    /* position: fixed; */
     transition: .3s;
     overflow: hidden;
+    height: var(--element-height);
     margin: var(--element-spacing);
     background-color: var(--color-background-base);
+    border-radius: var(--border-radius-medium);
 }
 
 .game:focus {
-    /* position: absolute; */
-    /* top: 3em; */
-    width: 100%;
-    height: 100%;
+    color: var(--color-text-link) !important;
+    height: calc(100%);
     z-index: 2;
 }
 
-.game-achievement-list {
-    height: 100%;
-    overflow-y: auto;
-}
-
 .game-details {
+    height: var(--element-height);
     cursor: pointer;
     display: flex;
     z-index: 100;
 }
 
-.game-image,
+.game-icon-wrapper {
+    margin: var(--element-spacing);
+}
+
+.game-icon {
+    height: 32px;
+    width: 32px;
+}
+
 .game-title {
-    padding: .4em;
+    transition: 0s;
+    margin: var(--element-spacing);
+    line-height: var(--line-height-heading);
+    font-size: var(--font-size-4);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-base);
+}
+
+.game-achievement-list {
+    height: calc(100% - var(--element-height));
+    overflow-y: auto;
 }

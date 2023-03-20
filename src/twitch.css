@@ -1,0 +1,119 @@
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+    border: 0;
+    /* font-size: 100%; */
+    /* font: inherit; */
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+.theme-dark,
+:root {
+    --color-background-body: var(--twitch-color-hinted-grey-1);
+    --color-background-base: var(--twitch-color-hinted-grey-2);
+    --color-text-base: var(--twitch-color-hinted-grey-14);
+    --color-text-alt: var(--twitch-color-hinted-grey-12);
+    --color-text-alt-2: var(--twitch-color-hinted-grey-9);
+    --color-text-link: var(--twitch-color-twitch-purple-11);
+    --color-text-link-hover: var(--twitch-color-twitch-purple-10);
+    --color-text-link-active: var(--twitch-color-twitch-purple-11);
+    --color-text-link-focus: var(--twitch-color-twitch-purple-10);
+    --color-text-link-visited: var(--twitch-color-twitch-purple-11);
+    --color-border-base: var(--twitch-color-opac-gd-2);
+}
+
+.theme-light,
+:root {
+    --color-background-body: var(--twitch-color-hinted-grey-15);
+    --color-background-base: var(--twitch-color-white);
+    --color-text-link: var(--twitch-color-twitch-purple-7);
+    --color-text-base: var(--twitch-color-hinted-grey-1);
+    --color-text-alt: var(--twitch-color-hinted-grey-3);
+    --color-text-alt-2: var(--twitch-color-hinted-grey-7);
+    --color-text-link: var(--twitch-color-twitch-purple-7);
+    --color-text-link-hover: var(--twitch-color-twitch-purple-8);
+    --color-text-link-active: var(--twitch-color-twitch-purple-7);
+    --color-text-link-focus: var(--twitch-color-twitch-purple-8);
+    --color-text-link-visited: var(--twitch-color-twitch-purple-7);
+    --color-border-base: var(--twitch-color-opac-gd-2);
+}

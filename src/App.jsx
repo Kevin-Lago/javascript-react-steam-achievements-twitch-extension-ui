@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './App.css';
 import Header from './components/header/Header';
 import Game from './components/game/Game';
+import './App.css';
 
 export default class App extends Component {
     constructor(props) {
@@ -27242,7 +27242,7 @@ export default class App extends Component {
 
     render() {
         return (
-            <div id='app' className='theme-dark'>
+            <div id='app' className='theme-dark no-select'>
                 <Header theme={this.theme} />
                 <div id="games">
                     {this.state.games.map(game =>

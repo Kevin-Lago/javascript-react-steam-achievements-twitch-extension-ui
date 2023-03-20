@@ -1,9 +1,19 @@
-#header {
+#steam-achievements-header {
     height: var(--element-height);
 }
 
-#header-title {
+#steam-achievements-header-title-wrapper {
     background-color: var(--color-background-body);
     height: calc(100% - var(--element-spacing));
     width: calc(100% - var(--element-spacing));
+}
+
+#steam-achievements-header-title {
+    position: relative;
+    top: var(--element-spacing);
+    left: var(--element-spacing);
+    font-family: var(--font-display);
+    font-size: var(--font-size-3);
+    font-weight: var(--font-weight-normal);
+    color: var(--color-text-base);
 }

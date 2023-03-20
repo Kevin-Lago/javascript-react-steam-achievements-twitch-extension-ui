@@ -10,11 +10,13 @@ export default class Header extends Component {
 
     render() {
         return (
-            <div id='header' style={{
+            <div id='steam-achievements-header' style={{
                 backgroundColor: `${this.theme}`
             }}>
-                <div id='header-title' className='flex-center'>
-                    Steam Achievements
+                <div id='steam-achievements-header-title-wrapper' className='flex-center'>
+                    <h3 id='steam-achievements-header-title'>
+                        Steam Achievements
+                    </h3>
                 </div>
             </div>
         )

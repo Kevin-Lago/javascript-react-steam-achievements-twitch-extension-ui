@@ -1,81 +1,112 @@
 html {
-  line-height: 1.5;
-  text-size-adjust: 100%;
-  font-size: 62.5%;
+    line-height: 1.5;
+    text-size-adjust: 100%;
+    font-size: 62.5%;
+}
+
+.theme-dark,
+:root {
+    --color-background-body: var(--twitch-color-hinted-grey-1);
+    --color-background-base: var(--twitch-color-hinted-grey-2);
+    --color-text-base: var(--twitch-color-hinted-grey-14);
+    --color-text-alt: var(--twitch-color-hinted-grey-12);
+    --color-text-alt-2: var(--twitch-color-hinted-grey-9);
+    --color-text-link: var(--twitch-color-twitch-purple-11);
+    --color-text-link-hover: var(--twitch-color-twitch-purple-10);
+    --color-text-link-active: var(--twitch-color-twitch-purple-11);
+    --color-text-link-focus: var(--twitch-color-twitch-purple-10);
+    --color-text-link-visited: var(--twitch-color-twitch-purple-11);
+    --color-border-base: var(--twitch-color-opac-gd-2);
+}
+
+.theme-light,
+:root {
+    --color-background-body: var(--twitch-color-hinted-grey-15);
+    --color-background-base: var(--twitch-color-white);
+    --color-text-link: var(--twitch-color-twitch-purple-7);
+    --color-text-base: var(--twitch-color-hinted-grey-1);
+    --color-text-alt: var(--twitch-color-hinted-grey-3);
+    --color-text-alt-2: var(--twitch-color-hinted-grey-7);
+    --color-text-link: var(--twitch-color-twitch-purple-7);
+    --color-text-link-hover: var(--twitch-color-twitch-purple-8);
+    --color-text-link-active: var(--twitch-color-twitch-purple-7);
+    --color-text-link-focus: var(--twitch-color-twitch-purple-8);
+    --color-text-link-visited: var(--twitch-color-twitch-purple-7);
+    --color-border-base: var(--twitch-color-opac-gd-2);
 }
 
 #app {
-  background-color: var(--color-background-body);
-  color: white;
-  overflow-y: hidden;
-  height: 100vh;
-  --element-height: 5rem;
-  --element-spacing: var(--space-05);
+    background-color: var(--color-background-body);
+    color: white;
+    overflow-y: hidden;
+    height: 100vh;
+    --element-height: 5rem;
+    --element-spacing: var(--space-05);
 }
 
 #games {
-  height: calc(100% - var(--element-height));
-  /* margin-top: var(--element-spacing); */
-  overflow-y: scroll;
-  z-index: 5;
+    height: calc(100% - var(--element-height));
+    /* margin-top: var(--element-spacing); */
+    overflow-y: scroll;
+    z-index: 5;
 }
 
 #games::-webkit-scrollbar,
 .game-achievement-list::-webkit-scrollbar {
-  width: 0.6rem;
-  opacity: 0.7;
-  transition: .3s;
+    width: 0.6rem;
+    opacity: 0.7;
+    transition: .3s;
 }
 
 #games::-webkit-scrollbar-track,
 .game-achievement-list::-webkit-scrollbar-track {
-  display: none;
+    display: none;
 }
 
 #games::-webkit-scrollbar-thumb,
 .game-achievement-list::-webkit-scrollbar-thumb {
-  background: var(--color-border-base);
-  border-radius: var(--element-spacing);
+    background: var(--color-border-base);
+    border-radius: var(--element-spacing);
 }
 
 .flex-start {
-  display: flex;
-  justify-content: start;
-  align-items: center;
+    display: flex;
+    justify-content: start;
+    align-items: center;
 }
 
 .flex-start-column {
-  display: flex;
-  justify-content: start;
-  align-items: start;
-  flex-direction: column;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
 }
 
 .flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .flex-center-column {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .no-select {
-  -webkit-touch-callout: none;
-  /* iOS Safari */
-  -webkit-user-select: none;
-  /* Safari */
-  -khtml-user-select: none;
-  /* Konqueror HTML */
-  -moz-user-select: none;
-  /* Old versions of Firefox */
-  -ms-user-select: none;
-  /* Internet Explorer/Edge */
-  user-select: none;
-  /* Non-prefixed version, currently
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
   supported by Chrome, Edge, Opera and Firefox */
 }

@@ -10,7 +10,7 @@
 
 .game:focus {
     color: var(--color-text-link) !important;
-    height: calc(100%);
+    height: calc(100% - (var(--element-spacing) * 2));
     z-index: 2;
 }
 
@@ -35,7 +35,7 @@
     margin: var(--element-spacing);
     line-height: var(--line-height-heading);
     font-size: var(--font-size-4);
-    font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-normal);
     color: var(--color-text-base);
 }
 

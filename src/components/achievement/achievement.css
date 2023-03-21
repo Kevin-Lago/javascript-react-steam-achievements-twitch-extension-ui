@@ -2,7 +2,8 @@
     width: calc(100% - (var(--element-spacing) * 2));
     border-top: var(--border-width-default) solid var(--color-border-base);
     /* height: var(--element-height); */
-    margin: var(--element-spacing);
+    padding-top: var(--element-spacing);
+    margin-bottom: var(--element-spacing);
     background-color: var(--color-background-base);
 }
 

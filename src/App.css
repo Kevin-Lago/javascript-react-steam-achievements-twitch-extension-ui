@@ -95,6 +95,10 @@ html {
     flex-direction: column;
 }
 
+.hidden {
+    display: none;
+}
+
 .no-select {
     -webkit-touch-callout: none;
     /* iOS Safari */

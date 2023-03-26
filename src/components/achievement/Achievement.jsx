@@ -6,13 +6,15 @@ export default class Achievement extends Component {
         super(props)
 
         this.achievement = props.achievement;
+        this.achieved = this.achievement.playerAchievement.achieved;
+        this.icon = this.achieved ? this.achievement.icon : this.achievement.iconGray;
     }
 
     render() {
         return (
-            <div className='achievement flex-start'>
+            <div className={this.achieved ? 'achievement flex-start achieved' : 'achievement flex-start'}>
                 <div className='achievement-icon-wrapper flex-center'>
-                    <img className='achievement-icon' alt={this.achievement.displayName + " Preview Image"} src={this.achievement.icon}></img>
+                    <img className='achievement-icon' alt={this.achievement.displayName + " Preview Image"} src={this.icon}></img>
                 </div>
                 <div className='achievement-details flex-start-column'>
                     <div className='achievement-title-wrapper'>
@@ -25,9 +27,9 @@ export default class Achievement extends Component {
                             {this.achievement.description}
                         </p>
                     </div>
-                    {/* <div className='achievement-progress'>
+                    <div className='achievement-progress'>
                         1/1
-                    </div> */}
+                    </div>
                 </div>
             </div>
         )

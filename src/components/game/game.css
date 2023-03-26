@@ -8,11 +8,17 @@
     border-radius: var(--border-radius-medium);
 }
 
-.game:focus {
+.game-open {
     color: var(--color-text-link) !important;
     height: calc(100% - (var(--element-spacing) * 2));
     z-index: 2;
 }
+
+/* .game:focus {
+    color: var(--color-text-link) !important;
+    height: calc(100% - (var(--element-spacing) * 2));
+    z-index: 2;
+} */
 
 .game-details {
     height: var(--element-height);

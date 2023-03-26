@@ -25,7 +25,7 @@ export default class App extends Component {
                 response.json().then(body => {
                     console.log(body)
                     this.setState({
-                        games: body
+                        player: body
                     })
                 })
             }).catch((error) => {

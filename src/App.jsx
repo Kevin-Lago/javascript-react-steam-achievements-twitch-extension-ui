@@ -10,7 +10,7 @@ export default class App extends Component {
         this.theme = "#00FFFF";
 
         this.state = {
-            games: []
+            player: null
         };
     }
 
@@ -42,7 +42,7 @@ export default class App extends Component {
             <div id='app' className='theme-dark no-select'>
                 <Header theme={this.theme} />
                 <div id="games">
-                    {this.state.games.length ? this.state.games.map(game =>
+                    {this.state.player ? this.state.player.games.map(game =>
                         <Game key={game.appId} game={game} />
                     ) : "Loading..."}
                 </div>

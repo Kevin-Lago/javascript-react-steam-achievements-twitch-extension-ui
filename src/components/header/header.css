@@ -1,12 +1,19 @@
-#steam-achievements-header {
+#steam-achievements-header-wrapper {
     height: var(--element-height);
 }
 
-#steam-achievements-header-title-wrapper {
+#player-avatar {
+    height: calc(var(--element-height) - (var(--element-spacing) * 2));
+    width: calc(var(--element-height) - (var(--element-spacing) * 2));
+}
+
+#steam-achievements-header {
     background-color: var(--color-background-body);
     height: calc(100% - var(--element-spacing));
     width: calc(100% - var(--element-spacing));
 }
+
+#steam-achievements-header-title-wrapper {}
 
 #steam-achievements-header-title {
     position: relative;

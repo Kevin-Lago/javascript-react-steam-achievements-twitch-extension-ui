@@ -14,17 +14,16 @@
     z-index: 2;
 }
 
-/* .game:focus {
-    color: var(--color-text-link) !important;
-    height: calc(100% - (var(--element-spacing) * 2));
-    z-index: 2;
-} */
-
-.game-details {
+.game-title-wrapper {
     height: var(--element-height);
+    transition: 0.3s;
     cursor: pointer;
     display: flex;
     z-index: 100;
+}
+
+.game-title-wrapper:hover {
+    background-color: var(--color-background-base-hover);
 }
 
 .game-icon-wrapper {
@@ -43,6 +42,16 @@
     font-size: var(--font-size-4);
     font-weight: var(--font-weight-normal);
     color: var(--color-text-base);
+}
+
+.game-details-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.game-details {
+    border-top: var(--border-width-default) solid var(--color-border-base);
+    height: var(--element-height);
 }
 
 .game-achievement-list {

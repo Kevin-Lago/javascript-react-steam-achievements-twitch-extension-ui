@@ -7,8 +7,12 @@ export default class Game extends Component {
         super(props);
 
         this.game = props.game;
-        this.game.achievements = this.game.achievements.sort((a, b) => a.playerAchievement.unlockTime - b.playerAchievement.unlockTime);
         this.ref = createRef();
+
+        const style = getComputedStyle(document.documentElement);
+
+        this.rem = style.getPropertyValue('--element-spacing');
+        this.spacing = this.rem.substring(0, this.rem.length - 3) * parseFloat(style.fontSize);
 
         this.state = {
             isOpened: false
@@ -16,22 +20,30 @@ export default class Game extends Component {
     }
 
     focus() {
-        // ToDo: Remove focus from other games
-        //  Adjust scroll to, account for --element-spacing
         this.setState({
             isOpened: !this.state.isOpened
         })
 
         this.ref.current.parentNode.parentNode.scrollTo({
             behavior: 'smooth',
-            top: this.ref.current.offsetTop - this.ref.current.clientHeight
+            top: this.ref.current.offsetTop - this.ref.current.clientHeight - this.spacing
         });
+
+        if (this.state.isOpened) {
+            this.ref.current.parentNode.parentNode.style.setProperty('overflow-y', 'auto');
+        } else {
+            this.ref.current.parentNode.parentNode.style.setProperty('overflow-y', 'hidden');
+        }
+    }
+
+    fetchAchievements() {
+        this.game.achievements = this.game.achievements.sort((a, b) => a.playerAchievement.unlockTime - b.playerAchievement.unlockTime);
     }
 
     render() {
         return (
             <div tabIndex={this.game.appId} id={this.game.appId} className={this.state.isOpened ? 'game game-open' : 'game'}>
-                <div ref={this.ref} onClick={() => this.focus()} className='game-details flex-start'>
+                <div ref={this.ref} onClick={() => this.focus()} className='game-title-wrapper flex-start'>
                     <div className='game-icon-wrapper flex-center'>
                         <img className='game-icon' alt={this.game.name + " Preview Image"} src={this.game.imageUrl}></img>
                     </div>
@@ -39,8 +51,13 @@ export default class Game extends Component {
                         {this.game.name}
                     </div>
                 </div>
-                <div className={this.state.isOpened ? 'game-achievement-list' : 'game-achievement-list hidden'}>
-                    {this.game.achievements.map(achievement => <Achievement key={achievement.steamName} achievement={achievement} />)}
+                <div className={this.state.isOpened ? 'game-details-wrapper' : 'game-details-wrapper hidden'}>
+                    <div className='game-details'>
+
+                    </div>
+                    <div className='game-achievement-list flex-center-column'>
+                        {this.game.achievements.map(achievement => <Achievement key={achievement.steamName} achievement={achievement} />)}
+                    </div>
                 </div>
             </div>
         )

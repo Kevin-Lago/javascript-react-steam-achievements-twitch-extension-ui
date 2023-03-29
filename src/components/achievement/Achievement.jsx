@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ProgressBar from './ProgressBar';
 import './achievement.css';
 
 export default class Achievement extends Component {
@@ -7,6 +8,7 @@ export default class Achievement extends Component {
 
         this.achievement = props.achievement;
         this.achieved = this.achievement.playerAchievement.achieved;
+        this.progress = this.achievement.playerAchievement.progress;
         this.icon = this.achieved ? this.achievement.icon : this.achievement.iconGray;
     }
 
@@ -27,9 +29,9 @@ export default class Achievement extends Component {
                             {this.achievement.description}
                         </p>
                     </div>
-                    <div className='achievement-progress'>
-                        1/1
-                    </div>
+                    {/* <div className='achievement-progress'>
+                        <ProgressBar playerAchievement={this.achievement.playerAchievement} />
+                    </div> */}
                 </div>
             </div>
         )

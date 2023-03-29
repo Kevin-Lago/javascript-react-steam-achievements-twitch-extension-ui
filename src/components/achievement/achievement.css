@@ -25,6 +25,7 @@
 .achievement-title-wrapper {}
 
 .achievement-title {
+    margin-bottom: var(--space-05);
     font-size: var(--font-size-5);
     font-weight: var(--font-weight-normal);
     color: var(--color-text-base);
@@ -36,6 +37,17 @@
     font-size: var(--font-size-7);
     font-weight: var(--font-weight-normal);
     color: var(--color-text-alt-2);
+}
+
+.achievement-progress {
+    margin-top: 1em;
+    height: 1em;
+    width: 100%;
+}
+
+.achievement-progress-bar {
+    width: 100%;
+    height: 100%;
 }
 
 .achieved {

@@ -40,7 +40,7 @@ export default class App extends Component {
     render() {
         return (
             <div id='app' className='theme-dark no-select'>
-                <Header theme={this.theme} />
+                <Header theme={this.theme} avatarHash={this.state.player?.avatarHash} steamName={this.state.player?.steamName} />
                 <div id="games">
                     {this.state.player ? this.state.player.games.map(game =>
                         <Game key={game.appId} game={game} />

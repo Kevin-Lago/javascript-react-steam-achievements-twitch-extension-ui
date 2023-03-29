@@ -8,6 +8,7 @@ html {
 :root {
     --color-background-body: var(--twitch-color-hinted-grey-1);
     --color-background-base: var(--twitch-color-hinted-grey-2);
+    --color-background-base-hover: var(--twitch-color-hinted-grey-4);
     --color-text-base: var(--twitch-color-hinted-grey-14);
     --color-text-alt: var(--twitch-color-hinted-grey-12);
     --color-text-alt-2: var(--twitch-color-hinted-grey-9);
@@ -23,6 +24,7 @@ html {
 :root {
     --color-background-body: var(--twitch-color-hinted-grey-15);
     --color-background-base: var(--twitch-color-white);
+    --color-background-base-hover: var(--twitch-color-hinted-grey-10);
     --color-text-link: var(--twitch-color-twitch-purple-7);
     --color-text-base: var(--twitch-color-hinted-grey-1);
     --color-text-alt: var(--twitch-color-hinted-grey-3);
@@ -35,13 +37,20 @@ html {
     --color-border-base: var(--twitch-color-opac-gd-2);
 }
 
+:root {
+    --element-height: 5rem;
+    --element-spacing: var(--space-05);
+}
+
 #app {
     background-color: var(--color-background-body);
     color: white;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
     height: 100vh;
-    --element-height: 5rem;
-    --element-spacing: var(--space-05);
+}
+
+.fixed {
+    position: fixed;
 }
 
 #games {

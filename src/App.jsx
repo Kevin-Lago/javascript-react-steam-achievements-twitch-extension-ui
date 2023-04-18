@@ -10,12 +10,13 @@ export default class App extends Component {
         this.theme = "#00FFFF";
 
         this.state = {
+            steamId: '76561198015026212',
             player: null
         };
     }
 
     componentDidMount() {
-        fetch("http://localhost:8080/api/simp/player?steamId=76561198015026212")
+        fetch(`http://localhost:8080/api/simp/player?steamId=${this.state.steamId}`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("Failed to fetch steam games");
@@ -33,17 +34,13 @@ export default class App extends Component {
             })
     }
 
-    fetchAchievements() {
-
-    }
-
     render() {
         return (
             <div id='app' className='theme-dark no-select'>
                 <Header theme={this.theme} avatarHash={this.state.player?.avatarHash} steamName={this.state.player?.steamName} />
                 <div id="games">
                     {this.state.player ? this.state.player.games.map(game =>
-                        <Game key={game.appId} game={game} />
+                        <Game key={game.appId} steamId={this.state.steamId} game={game} />
                     ) : "Loading..."}
                 </div>
             </div>

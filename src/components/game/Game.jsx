@@ -7,6 +7,7 @@ export default class Game extends Component {
         super(props);
 
         this.game = props.game;
+        this.steamId = props.steamId;
         this.imageUrl = `${process.env.REACT_APP_STEAM_MEDIA_URL}/steamcommunity/public/images/apps/${this.game.appId}/${this.game.imageUrl}.jpg`;
         this.ref = createRef();
 
@@ -16,28 +17,49 @@ export default class Game extends Component {
         this.spacing = this.rem.substring(0, this.rem.length - 3) * parseFloat(style.fontSize);
 
         this.state = {
-            isOpened: false
+            isOpened: false,
+            achievements: []
         }
     }
 
     focus() {
+        if (this.state.achievments == null) {
+            this.fetchAchievements();
+        }
+
         this.setState({
             isOpened: !this.state.isOpened
         })
-
-        this.ref.current.parentNode.parentNode.scrollTo({
-            behavior: 'smooth',
-            top: this.ref.current.offsetTop - this.ref.current.clientHeight - this.spacing
-        });
 
         if (this.state.isOpened) {
             this.ref.current.parentNode.parentNode.style.setProperty('overflow-y', 'auto');
         } else {
             this.ref.current.parentNode.parentNode.style.setProperty('overflow-y', 'hidden');
         }
+
+        this.ref.current.parentNode.parentNode.scrollTo({
+            behavior: 'smooth',
+            top: this.ref.current.offsetTop - this.ref.current.clientHeight - this.spacing
+        });
     }
 
     fetchAchievements() {
+        fetch(`http://localhost:8080/api/simp/achievements?steamId=${this.steamId}&appId=${this.game.appId}`)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("Failed to fetch steam games");
+                }
+
+                response.json().then(body => {
+                    console.log(body)
+                    this.setState({
+                        achievements: body
+                    })
+                })
+            }).catch((error) => {
+                console.log(error)
+            })
+
         this.game.achievements = this.game.achievements.sort((a, b) => a.playerAchievement.unlockTime - b.playerAchievement.unlockTime);
     }
 
@@ -53,11 +75,14 @@ export default class Game extends Component {
                     </div>
                 </div>
                 <div className={this.state.isOpened ? 'game-details-wrapper' : 'game-details-wrapper hidden'}>
-                    <div className='game-details'>
+                    {/* <div className='game-details'>
 
-                    </div>
-                    <div className='game-achievement-list flex-center-column'>
-                        {this.game.achievements.map(achievement => <Achievement key={achievement.steamName} achievement={achievement} />)}
+                    </div> */}
+                    <div className='game-achievement-list'>
+                        {
+                            this.state.achievements == null ? "Loading..." :
+                                this.state.achievements.map(achievement => <Achievement key={achievement.steamName} achievement={achievement} />)
+                        }
                     </div>
                 </div>
             </div>

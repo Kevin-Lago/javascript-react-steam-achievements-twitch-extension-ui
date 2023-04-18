@@ -1,6 +1,6 @@
 .game {
     display: block;
-    transition: .3s;
+    /* transition: .3s; */
     overflow: hidden;
     height: var(--element-height);
     margin: var(--element-spacing);

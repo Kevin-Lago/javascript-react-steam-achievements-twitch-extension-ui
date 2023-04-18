@@ -45,7 +45,6 @@ html {
 #app {
     background-color: var(--color-background-body);
     color: white;
-    /* overflow-y: hidden; */
     height: 100vh;
 }
 
@@ -55,7 +54,6 @@ html {
 
 #games {
     height: calc(100% - var(--element-height));
-    /* margin-top: var(--element-spacing); */
     overflow-y: scroll;
     z-index: 5;
 }

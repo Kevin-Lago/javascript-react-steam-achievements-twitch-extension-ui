@@ -7,6 +7,7 @@ export default class Game extends Component {
         super(props);
 
         this.game = props.game;
+        this.imageUrl = `${process.env.REACT_APP_STEAM_MEDIA_URL}/steamcommunity/public/images/apps/${this.game.appId}/${this.game.imageUrl}.jpg`;
         this.ref = createRef();
 
         const style = getComputedStyle(document.documentElement);
@@ -45,7 +46,7 @@ export default class Game extends Component {
             <div tabIndex={this.game.appId} id={this.game.appId} className={this.state.isOpened ? 'game game-open' : 'game'}>
                 <div ref={this.ref} onClick={() => this.focus()} className='game-title-wrapper flex-start'>
                     <div className='game-icon-wrapper flex-center'>
-                        <img className='game-icon' alt={this.game.name + " Preview Image"} src={this.game.imageUrl}></img>
+                        <img className='game-icon' alt={this.game.name + " Preview Image"} src={this.imageUrl}></img>
                     </div>
                     <div className='game-title flex-start'>
                         {this.game.name}

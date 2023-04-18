@@ -15,7 +15,7 @@ export default class App extends Component {
     }
 
     componentDidMount() {
-        fetch("http://localhost:8080/api/player?steamId=76561198015026212")
+        fetch("http://localhost:8080/api/simp/player?steamId=76561198015026212")
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("Failed to fetch steam games");
